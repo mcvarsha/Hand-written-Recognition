@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Accuracy</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            color: #000;
+            font-family: 'Helvetica', sans-serif;
+            background-color: rgb(226, 230, 232);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(../static/images/1.jpg);
+        }
+        .header {
+            background-color: #6200ea;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .header h1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
+            font-size: 2.5em;
+            font-style: inherit;
+        }
+        .btn-main {
+            background-color: #fff;
+            color: #6200ea;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 5px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        .btn-main:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.05);
+        }
+        .btn-main:focus {
+            outline: none;
+            box-shadow: 0 0 5px 2px rgba(98, 0, 234, 0.6);
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .image-container img {
+            max-width: 400px;  /* Increase max-width to enlarge images */
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            background-color: #110f13;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Model Accuracy</h1>
+        <button class="btn-main" onclick="window.location.href='/'">Go to Main Page</button>
+    </div>
+    <div class="content">
+        <div class="image-container">
+            {% for image in images %}
+                <img src="{{ url_for('static', filename=image.split('static/')[1]) }}" alt="Image">
+            {% endfor %}
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Handwritten Digits Recognition. All rights reserved.</p>
+    </div>
+</body>
+</html>
